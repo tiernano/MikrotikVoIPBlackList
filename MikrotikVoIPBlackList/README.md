@@ -7,7 +7,7 @@ Microsoft VoIP BlackList is a .NET Core app that downloads a list of Blacklisted
 I noticed i was getting a lot of authentication requests to my VoIP Server ([3cx](http://www.3cx.com)) that was being blacklisted on the VoIP server itself, so i went looking, and found VoipBL.org. But they only have code for [Fail2Ban](https://www.fail2ban.org) on [Asterisk](https://www.asterisk.org). So, thats how this was born!
 
 ## How do i use it?
-You need .NET Core 2.0 on your machine. Binaries will be avaialbe soon, but till then, you will either need to build it with Visual Studio 2017 or .NET Core SDK 2.0. 
+You need .NET Core 2.1 on your machine. Binaries will be avaialbe soon, but till then, you will either need to build it with Visual Studio 2017 or .NET Core SDK 2.1. 
 
 The following steps might help:
 

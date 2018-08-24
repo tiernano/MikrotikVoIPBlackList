@@ -15,7 +15,7 @@ namespace MikrotikVoIPBlackList
 			StringBuilder sb = new StringBuilder();
 			string message = string.Format(@"#  Last Update: {0} {1}
 #  
-#  This script imports blacklisted VoIP Ips from http://www.voipbl.org/ to Routeros ip address list
+#  This script imports blacklisted VoIP Ips from http://www.voipbl.org/ to RouterOS ip address list
 #  ", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString());
 
 			sb.AppendLine(message);
@@ -34,9 +34,9 @@ namespace MikrotikVoIPBlackList
 
 			string blList = client.GetStringAsync(blURL).Result;
 
-			var lines = from x in blList.Split('\n')
+			var lines = (from x in blList.Split('\n')
 				where !string.IsNullOrWhiteSpace(x) && !x.StartsWith("#")
-				select x;
+				select x).ToList();
 
 			Console.WriteLine($"Found {lines.Count()} blacklisted IPs");
 
